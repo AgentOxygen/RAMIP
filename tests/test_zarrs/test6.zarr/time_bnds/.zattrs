@@ -1,0 +1,9 @@
+{
+    "_ARRAY_DIMENSIONS": [
+        "member",
+        "time",
+        "bnds"
+    ],
+    "calendar": "noleap",
+    "units": "days since 0001-01-01 00:00:00"
+}

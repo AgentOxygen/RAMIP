@@ -1,0 +1,17 @@
+{
+    "_ARRAY_DIMENSIONS": [
+        "member",
+        "time",
+        "lat",
+        "lon"
+    ],
+    "cell_measures": "area: areacella",
+    "cell_methods": "area: time: mean",
+    "comment": "includes both liquid and solid phases",
+    "history": "2019-12-06T14:48:36Z altered by CMOR: Converted type from 'd' to 'f'.",
+    "long_name": "Precipitation",
+    "missing_value": 1.0000000200408773e+20,
+    "original_name": "PRECT",
+    "standard_name": "precipitation_flux",
+    "units": "kg m-2 s-1"
+}
