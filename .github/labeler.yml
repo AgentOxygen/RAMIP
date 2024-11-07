@@ -1,0 +1,24 @@
+"UKESM":
+    - "All models"
+    - "UKESM"
+"NorESM2":
+    - "All models"
+    - "NorESM2"
+"GISS":
+    - "All models"
+    - "GISS"
+"CESM2":
+    - "All models"
+    - "CESM2"
+"MIROC-SPRINTARS":
+    - "All models"
+    - "MIROC-SPRINTARS"
+"EC-Earth3":
+    - "All models"
+    - "EC-Earth3"
+"CanESM5":
+    - "All models"
+    - "CanESM5"
+"MRI-ESM2":
+    - "All models"
+    - "MRI-ESM2"
