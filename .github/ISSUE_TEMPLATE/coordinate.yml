@@ -22,15 +22,24 @@ body:
       multiple: true
       description: Which models were impacted?
       options:
-        - All models
-        - UKESM
-        - NorESM2
-        - GISS
-        - CESM2
-        - MIROC-SPRINTARS
-        - EC-Earth3
-        - CanESM5
-        - MRI-ESM2
+        - label: "All models"
+		  value: "All models"
+        - label: "UKESM"
+		  value: "UKESM"
+        - label: "NorESM2"
+		  value: "NorESM2"
+        - label: "GISS"
+		  value: "GISS"
+        - label: "CESM2"
+		  value: "CESM2"
+        - label: "MIROC-SPRINTARS"
+		  value: "MIROC-SPRINTARS"
+        - label: "EC-Earth3"
+		  value: "EC-Earth3"
+        - label: "CanESM5"
+		  value: "CanESM5"
+        - label: "MRI-ESM2"
+		  value: "MRI-ESM2"
     validations:
       required: true
   - type: dropdown
