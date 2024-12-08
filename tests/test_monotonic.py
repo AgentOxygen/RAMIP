@@ -23,7 +23,6 @@ def check_monotonic(ds1: xr.Dataset, verbose = False):
                 print(Fore.CYAN + f"The time values for {get_filename(ds1)} dataset are not fully increasing. Here are the time steps that violate the monotonic increasing condition: "  + Style.RESET_ALL)
             for index in violations:
                 print(f"{times[index]} -> {times[index+1]} (index {index} -> {index+1})")
-            print()
         if not ds1.time.to_index().is_unique:
             duplicates = collections.defaultdict(list)
             for i, time in enumerate(ds1.time.to_index()):
@@ -36,7 +35,7 @@ def check_monotonic(ds1: xr.Dataset, verbose = False):
                 print(Fore.CYAN + f"The time values for {get_filename(ds1)} dataset are not unique. Here are the time steps that are not unique: "  + Style.RESET_ALL)
             for k, v in duplicates:
                 print(f"{k} (indices {v})")
-            print()
+        print()
 
     return ds1.time.to_index().is_monotonic_increasing and ds1.time.to_index().is_unique
 
