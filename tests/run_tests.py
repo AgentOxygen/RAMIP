@@ -9,13 +9,15 @@ Developers: Willow Lin Stenglein, Cameron Cummins
 Contact: cameron.cummins@utexas.edu
 Last Header Update: 10/10/24
 """
-from tests.test_monotonic import test_monotonic
-from tests.test_calendar import test_calendar
-from tests.test_units import test_units
-from tests.test_variable_name import test_variable_name
-from tests.test_spatial_coords import test_spatial_coords
-from tests.utils import convert_paths, get_filename
-from tests.show_single import show_single
+from test_monotonic import test_monotonic
+from test_calendar import test_calendar
+from test_units import test_units
+from test_variable_name import test_variable_name
+from test_spatial_coords import test_spatial_coords
+from test_time_gaps import test_time_gaps
+from test_timestep import test_timestep
+from utils import convert_paths, get_filename
+from show_single import show_single
 from colorama import Fore, Style
 
 def check_model(paths: list[str], verbose: bool=False) -> None:
@@ -23,7 +25,8 @@ def check_model(paths: list[str], verbose: bool=False) -> None:
 
 
 def run(paths: str | list[str], verbose: bool=False, check_monotonic: bool=True, check_calendar: bool=True, 
-        check_units: bool=True, check_variable_name: bool=True, check_spatial_coords: bool=True) -> None:
+        check_units: bool=True, check_variable_name: bool=True, check_spatial_coords: bool=True, 
+        check_time_gaps: bool=True, check_timestep: bool=True) -> None:
 
     datasets = convert_paths(paths)
 
@@ -57,6 +60,10 @@ def run(paths: str | list[str], verbose: bool=False, check_monotonic: bool=True,
         summary_msg += test_variable_name(datasets, verbose, checks) + "\n"
     if check_spatial_coords:
         summary_msg += test_spatial_coords(datasets, verbose, checks) + "\n"
+    if check_time_gaps:
+        summary_msg += test_time_gaps(datasets_with_time, verbose, checks) + "\n"
+    if check_timestep:
+        summary_msg += test_timestep(datasets_with_time, verbose, checks) + "\n"
 
     print(f"\n\nSUMMARY: {sum(checks.values())}/{len(checks)} checks passed.")
     print("=============================================================")
